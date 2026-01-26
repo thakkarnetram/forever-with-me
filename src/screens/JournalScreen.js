@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, FlatList, TextInput, Button, Text, StyleSheet } from 'react-native';
-import { saveJournalEntry, getJournalEntries } from '../utils/storage';
+import { saveJournalEntry, getJournalEntries } from '../utils/Storage';
 
 export default function JournalScreen() {
     const [entry, setEntry] = useState('');
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         marginBottom: 10
     },
-    date: { 
+    date: {
         fontSize: 12,
         color: 'gray',
         marginTop: 5

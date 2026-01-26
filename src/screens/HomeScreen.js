@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 export default function HomeScreen({ navigation }) {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Forever With Us</Text>
+            <Text style={styles.title}>Forever With Me</Text>
 
             <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Memories')}>
                 <Text style={styles.cardText}>Memory Wall</Text>

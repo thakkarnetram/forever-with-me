@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet } from 'react-native';
-import { saveMemory } from '../utils/storage';
+import { saveMemory } from '../utils/Storage';
 
 export default function AddMemoryScreen({ navigation }) {
     const [text, setText] = useState('');
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#ccc',
         padding: 10,
-        borderRadius: 6, 
+        borderRadius: 6,
         height: 100,
         marginBottom: 10
     },

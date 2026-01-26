@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, FlatList, TouchableOpacity, Text } from 'react-native';
-import { getMemories } from '../utils/storage';
+import { getMemories } from '../utils/Storage';
 import MemoryCard from '../components/MemoryCard';
 
 export default function MemoryWallScreen({ navigation }) {

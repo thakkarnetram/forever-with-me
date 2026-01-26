@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator();
 const AppNavigator = () => {
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Home" component={HomeScreen} options={{ title: "Forever With Us" }} />
+            <Stack.Screen name="Home" component={HomeScreen} options={{ title: "Forever With Me" }} />
             <Stack.Screen name="Memories" component={MemoryWallScreen} />
             <Stack.Screen name="AddMemory" component={AddMemoryScreen} options={{ title: "Add Memory" }} />
             <Stack.Screen name="Journal" component={JournalScreen} />
