@@ -1,64 +1,76 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import LinearGradient from 'react-native-linear-gradient';
 import {colors} from '../utils/Colors';
+import AppGradient from '../components/AppGradient';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const OnBoardScreen = () => {
   // this screen would be the entry point of the app
   const navigation = useNavigation();
-  // useEffect(() => {
-  //   setTimeout( () => {
-  //     navigation.navigate('Overview');
-  //   }, 5000);
-  // }, [navigation]);
-
   const navigateToOverviewScreen = () => {
     navigation.replace('Overview');
   };
   return (
-    <LinearGradient
-      colors={[colors.primaryColor, colors.secondaryColor]}
-      start={{x: 0.5, y: 0}}
-      end={{x: 0.5, y: 1}}
-      style={styles.backGround}>
-      <View>
-        <Text style={styles.headerText}>
-          Some memories deserve{'\n'}a place to stay
-        </Text>
-        <View>
-          <TouchableOpacity style={styles.buttonContainer} onPress={navigateToOverviewScreen}>
+    <AppGradient style={styles.backGround}>
+      <SafeAreaView style={styles.safeAreaContainer}>
+        <View style={styles.headerContainer}>
+          <Text style={styles.headerText}>
+            Some memories deserve{'\n'}a place to stay
+          </Text>
+        </View>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={navigateToOverviewScreen}>
             <Text style={styles.buttonText}>Continue</Text>
           </TouchableOpacity>
         </View>
-      </View>
-    </LinearGradient>
+      </SafeAreaView>
+    </AppGradient>
   );
 };
 
 const styles = StyleSheet.create({
   backGround: {
-    flex: 1,
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+  },
+  safeAreaContainer: {
+    paddingHorizontal: wp('8%'),
+    paddingVertical: hp('6%'),
+    justifyContent: 'space-between',
+  },
+  headerContainer: {
+    alignItems: 'flex-start',
+    marginTop:hp('25%'),
   },
   headerText: {
-    color: colors.primaryTextColor,
-    fontSize: 24,
-    alignItems: 'center',
+    color: colors.dark.primaryTextColor,
+    fontSize: hp('3%'),
+    textAlign: 'left',
+    lineHeight: hp('4%'),
   },
   buttonContainer: {
-    backgroundColor:colors.primaryButtonColor,
-    width: 300,
-    height: 50,
-    justifyContent:'center',
-    alignItems:'center',
-    marginTop:100,
-    borderRadius:10,
+    alignItems: 'center',
+    marginTop:hp('40%'),
+    position:'relative',
   },
-  buttonText:{
-    color:colors.primaryTextColor,
+  button: {
+    backgroundColor: colors.dark.primaryButtonColor,
+    width: wp('80%'),
+    height: hp('6%'),
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
+  },
+  buttonText: {
+    color: colors.dark.primaryTextColor,
+    fontSize: hp('2%'),
+    fontWeight: 'bold',
   },
 });
 

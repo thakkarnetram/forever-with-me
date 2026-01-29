@@ -7,6 +7,7 @@ import CalmScreen from '../screens/CalmScreen';
 import AddMemoryScreen from '../screens/AddMemoryScreen';
 import OnBoardScreen from '../screens/OnBoardScreen';
 import OverviewScreen from '../screens/OverviewScreen';
+import LoginScreen from '../screens/LoginScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +16,7 @@ const AppNavigator = () => {
         <Stack.Navigator>
             <Stack.Screen name="OnBoard" component={OnBoardScreen} options={{headerShown:false}}/>
             <Stack.Screen name="Overview" component={OverviewScreen} options={{headerShown:false}}/>
+            <Stack.Screen name="Login" component={LoginScreen} options={{headerShown:false}}/>
             <Stack.Screen name="Home" component={HomeScreen} options={{ title: "Forever With Me" }} />
             <Stack.Screen name="Memories" component={MemoryWallScreen} />
             <Stack.Screen name="AddMemory" component={AddMemoryScreen} options={{ title: "Add Memory" }} />
