@@ -12,7 +12,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 const OverviewScreen = () => {
   const navigation = useNavigation();
   const handleNavigation = () => {
-    navigation.navigate('Login');
+    navigation.replace('Signup');
   };
   return (
     <AppGradient style={styles.backGround}>
