@@ -8,15 +8,17 @@ import AddMemoryScreen from '../screens/AddMemoryScreen';
 import OnBoardScreen from '../screens/OnBoardScreen';
 import OverviewScreen from '../screens/OverviewScreen';
 import LoginScreen from '../screens/LoginScreen';
+import SignupScreen from '../screens/SignupScreen';
 
 const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
     return (
         <Stack.Navigator>
-            <Stack.Screen name="OnBoard" component={OnBoardScreen} options={{headerShown:false}}/>
-            <Stack.Screen name="Overview" component={OverviewScreen} options={{headerShown:false}}/>
-            <Stack.Screen name="Login" component={LoginScreen} options={{headerShown:false}}/>
+            <Stack.Screen name="OnBoard" component={OnBoardScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="Overview" component={OverviewScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="Signup" component={SignupScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
             <Stack.Screen name="Home" component={HomeScreen} options={{ title: "Forever With Me" }} />
             <Stack.Screen name="Memories" component={MemoryWallScreen} />
             <Stack.Screen name="AddMemory" component={AddMemoryScreen} options={{ title: "Add Memory" }} />
