@@ -23,17 +23,17 @@ export default function HomeScreen({ navigation }) {
     }
 
     return (
-        <AppGradient>
-            <SafeAreaView>
+        <AppGradient style={styles.backGround}>
+            <SafeAreaView style={styles.safeAreaContainer}>
                 <View style={styles.container}>
-                    <Text style={styles.title}>Forever With Me</Text>
-                    <Text style={styles.subtitle}>Memories don't leave. {'\n'} We carry them.</Text>
+                    <Text style={styles.headerText}>Forever With Me</Text>
+                    <Text style={styles.subHeaderText}>Memories don't leave. {'\n'}We carry them.</Text>
                 </View>
 
                 <View>
                     <TouchableOpacity style={styles.card} onPress = {navigateToMemoryScreen}>
                         <Text style={styles.cardTitle}>Memory Wall</Text>
-                        <Text style={styles.cardDescription}>A place for moments. {'\n'} and words that matter.</Text>
+                        <Text style={styles.cardDescription}>A place for moments. {'\n'}and words that matter.</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -57,22 +57,33 @@ export default function HomeScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#F2F4F5',
-        justifyContent: 'center',
-        alignItems: 'center'
+    backGround: {
+        display: 'flex',
     },
-    title: {
-        fontSize: 28,
+    safeAreaContainer: {
+        paddingHorizontal: wp('5%'),
+        paddingVertical: hp('6%'),
+    },
+    container: {
+        alignItems: 'flex-start',
+        marginBottom:hp('2%'),
+    },
+    headerText: {
+        fontSize: hp('3.2%'),
         fontWeight: '600',
-        marginBottom: 40
+        color:colors.dark.silentTextColor,
+        marginBottom: hp('1.2%'),
+    },
+    subHeaderText: {
+        fontSize: hp('2%'),
+        lineHeight: hp('2.6%'),
+        color: colors.dark.silentTextColor,
     },
     card: {
         width: '80%',
         backgroundColor:colors.dark.cardBackgroundColor,
-        borderRadius: wp('4%'),
-        paddingVertical: hp('2.5%'),
+        borderRadius: wp('2%'),
+        paddingVertical: hp('7%'),
         paddingHorizontal: wp('5%'),
         marginBottom: hp('2.2%'),
         shadowColor: '#000',
@@ -81,34 +92,15 @@ const styles = StyleSheet.create({
         shadowRadius: 12,
         elevation: 6,
     },
+    cardTitle: {
+        fontSize: hp('2.75%'),
+        fontWeight: '700',
+        color: colors.dark.silentButtonTextHeader,
+        marginBottom:hp('0.8%'),
+    },
     cardDescription: {
         fontSize: hp('1.8%'),
         lineHeight:hp('2.4%'),
         color: colors.dark.silentTextColor,
     },
-    screen: {
-        flex:1,
-        paddingHorizontal: wp('6%'),
-    },
-    header: {
-        marginTop: hp('6%'),
-        marginBottom: hp('%5'),
-    },
-    title: {
-        fontSize: hp('3.2%'),
-        fontWeight: '600',
-        color:colors.dark.primaryTextColor,
-        marginBottom: hp('1.2%'),
-    },
-    subtitle: {
-        fontSize: hp('2%'),
-        lineHeight: hp('2.6%'),
-        color: colors.dark.silentTextColor,
-    },
-    cardTitle: {
-        fontSize: hp('2.3%'),
-        fontWeight: '500',
-        color: colors.dark.cardTextColor,
-        marginBottom:hp('0.8%'),
-    }
 });
