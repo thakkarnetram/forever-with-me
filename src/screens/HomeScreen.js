@@ -1,23 +1,58 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import AppGradient from '../components/AppGradient';
+import { colors } from '../utils/Colors';
+import {
+    widthPercentageToDP as wp,
+    heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 export default function HomeScreen({ navigation }) {
+    const navigateToMemoryScreen = () => {
+        navigation.navigate('Memories')
+    }
+
+    const navigateToJournalScreen = () => {
+        navigation.navigate('Journal');
+    }
+
+    const navigateToCalmScreen = () => {
+        navigation.navigate('Calm');
+    }
+
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Forever With Me</Text>
+        <AppGradient>
+            <SafeAreaView>
+                <View style={styles.container}>
+                    <Text style={styles.title}>Forever With Me</Text>
+                    <Text style={styles.subtitle}>Memories don't leave. {'\n'} We carry them.</Text>
+                </View>
 
-            <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Memories')}>
-                <Text style={styles.cardText}>Memory Wall</Text>
-            </TouchableOpacity>
+                <View>
+                    <TouchableOpacity style={styles.card} onPress = {navigateToMemoryScreen}>
+                        <Text style={styles.cardTitle}>Memory Wall</Text>
+                        <Text style={styles.cardDescription}>A place for moments. {'\n'} and words that matter.</Text>
+                    </TouchableOpacity>
+                </View>
 
-            <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Journal')}>
-                <Text style={styles.cardText}>Shared Journal</Text>
-            </TouchableOpacity>
+                <View>
+                    <TouchableOpacity style={styles.card} onPress={navigateToJournalScreen}>
+                        <Text style={styles.cardTitle}>Shared Journal</Text>
+                        <Text style={styles.cardDescription}>Write when you need to.</Text>
+                    </TouchableOpacity>
+                </View>
 
-            <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Calm')}>
-                <Text style={styles.cardText}>Calm Corner</Text>
-            </TouchableOpacity>
-        </View>
+                <View>
+                    <TouchableOpacity style={styles.card} onPress={navigateToCalmScreen}>
+                        <Text style={styles.cardTitle}>Calm Corner</Text>
+                        <Text style={styles.cardDescription}>Return when it {'\n'}gets heavy.</Text>
+                    </TouchableOpacity>
+                </View>
+            </SafeAreaView>
+        </AppGradient>
+
     );
 }
 
@@ -33,15 +68,47 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         marginBottom: 40
     },
-    card: { width: '80%',
-        backgroundColor: '#fff',
-        padding: 20,
-        marginVertical: 10,
-        borderRadius: 10,
-        elevation: 2
+    card: {
+        width: '80%',
+        backgroundColor:colors.dark.cardBackgroundColor,
+        borderRadius: wp('4%'),
+        paddingVertical: hp('2.5%'),
+        paddingHorizontal: wp('5%'),
+        marginBottom: hp('2.2%'),
+        shadowColor: '#000',
+        shadowOffset: {width:0, height:6},
+        shadowOpacity: 0.25,
+        shadowRadius: 12,
+        elevation: 6,
     },
-    cardText: {
-        fontSize: 18,
-        textAlign: 'center'
+    cardDescription: {
+        fontSize: hp('1.8%'),
+        lineHeight:hp('2.4%'),
+        color: colors.dark.silentTextColor,
+    },
+    screen: {
+        flex:1,
+        paddingHorizontal: wp('6%'),
+    },
+    header: {
+        marginTop: hp('6%'),
+        marginBottom: hp('%5'),
+    },
+    title: {
+        fontSize: hp('3.2%'),
+        fontWeight: '600',
+        color:colors.dark.primaryTextColor,
+        marginBottom: hp('1.2%'),
+    },
+    subtitle: {
+        fontSize: hp('2%'),
+        lineHeight: hp('2.6%'),
+        color: colors.dark.silentTextColor,
+    },
+    cardTitle: {
+        fontSize: hp('2.3%'),
+        fontWeight: '500',
+        color: colors.dark.cardTextColor,
+        marginBottom:hp('0.8%'),
     }
 });
