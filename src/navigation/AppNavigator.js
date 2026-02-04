@@ -14,7 +14,7 @@ const AppNavigator = () => {
       <App.Screen
         name="Home"
         component={HomeScreen}
-        options={{title: 'Forever With Me'}}
+        options={{headerShown:false}}
       />
       <App.Screen name="Memories" component={MemoryWallScreen} />
       <App.Screen

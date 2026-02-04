@@ -9,6 +9,7 @@ export const colors = {
         cardTextColor:'rgba(255,255,255,0.87)', // card text color
         userTextInputBgColor:'#DEDEDE', // for TextInputs
         userInputTextColor:'#000000',// for user input
+        silentButtonTextHeader:'#BEC1C7', // for card button headers
     },
     light : {
         primaryColor : '#0B0E13' ,// top of linear gradient on all screens
