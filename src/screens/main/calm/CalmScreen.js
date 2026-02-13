@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
-export default function CalmScreen() {
+const  CalmScreen = () => {
     const [timer, setTimer] = useState(15);
 
     const startBreathing = () => {
@@ -38,3 +38,5 @@ const styles = StyleSheet.create({
         marginBottom: 20
     },
 });
+
+export default CalmScreen;

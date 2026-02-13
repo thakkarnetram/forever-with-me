@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { View, FlatList, TouchableOpacity, Text } from 'react-native';
 import { getMemories } from '../../../utils/Storage';
 import MemoryCard from '../../../components/MemoryCard';
+import {colors} from '../../../utils/Colors';
 
-export default function MemoryWallScreen({ navigation }) {
+const MemoryWallScreen = ({ navigation }) =>  {
     const [memories, setMemories] = useState([]);
 
     useEffect(() => {
@@ -20,4 +21,6 @@ export default function MemoryWallScreen({ navigation }) {
             </TouchableOpacity>
         </View>
     );
-}
+};
+
+export default MemoryWallScreen;
