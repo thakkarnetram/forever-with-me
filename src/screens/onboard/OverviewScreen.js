@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import AppGradient from '../components/AppGradient';
-import {colors} from '../utils/Colors';
+import AppGradient from '../../components/AppGradient';
+import {colors} from '../../utils/Colors';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,

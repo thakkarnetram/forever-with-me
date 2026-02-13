@@ -7,16 +7,16 @@ import {
   TextInput,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import AppGradient from '../components/AppGradient';
-import {colors} from '../utils/Colors';
+import AppGradient from '../../components/AppGradient';
+import {colors} from '../../utils/Colors';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Toast from 'react-native-toast-message';
-import {ROOT_URL} from '../utils/Constant';
-import {AuthContext} from '../context/AuthContext';
+import {ROOT_URL} from '../../utils/Constant';
+import {AuthContext} from '../../context/AuthContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const SignupScreen = () => {
