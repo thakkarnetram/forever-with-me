@@ -1,10 +1,10 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import HomeScreen from '../screens/HomeScreen';
-import MemoryWallScreen from '../screens/MemoryWallScreen';
-import JournalScreen from '../screens/JournalScreen';
-import CalmScreen from '../screens/CalmScreen';
-import AddMemoryScreen from '../screens/AddMemoryScreen';
+import HomeScreen from '../screens/main/home/HomeScreen';
+import MemoryWallScreen from '../screens/main/memory/MemoryWallScreen';
+import JournalScreen from '../screens/main/journal/JournalScreen';
+import CalmScreen from '../screens/main/calm/CalmScreen';
+import AddMemoryScreen from '../screens/main/memory/AddMemoryScreen';
 
 const App = createNativeStackNavigator();
 
