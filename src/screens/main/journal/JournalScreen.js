@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, FlatList, TextInput, Button, Text, StyleSheet } from 'react-native';
 import { saveJournalEntry, getJournalEntries } from '../../../utils/Storage';
 
-export default function JournalScreen() {
+const JournalScreen = () => {
     const [entry, setEntry] = useState('');
     const [entries, setEntries] = useState([]);
 
@@ -53,3 +53,5 @@ const styles = StyleSheet.create({
         marginTop: 5
     },
 });
+
+export default JournalScreen;

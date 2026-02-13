@@ -9,7 +9,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 
-export default function HomeScreen({ navigation }) {
+const  HomeScreen = ({ navigation }) => {
     const navigateToMemoryScreen = () => {
         navigation.navigate('Memories')
     }
@@ -104,3 +104,5 @@ const styles = StyleSheet.create({
         color: colors.dark.silentTextColor,
     },
 });
+
+export default HomeScreen;

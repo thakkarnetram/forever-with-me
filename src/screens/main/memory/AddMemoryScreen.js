@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet } from 'react-native';
 import { saveMemory } from '../../../utils/Storage';
 
-export default function AddMemoryScreen({ navigation }) {
+const  AddMemoryScreen = ({ navigation }) => {
     const [text, setText] = useState('');
 
     const addMemory = async () => {
@@ -36,3 +36,5 @@ const styles = StyleSheet.create({
         marginBottom: 10
     },
 });
+
+export default AddMemoryScreen;
